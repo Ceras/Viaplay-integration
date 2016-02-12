@@ -3,18 +3,17 @@ var path = require('path');
 
 module.exports = {
     entry: {
-        app: ['webpack-dev-server/client?http://localhost:3001', 'webpack/hot/dev-server', "./source/index"],
-        plugins: ['react']
+        app: ["./source/index"],
+        plugins: ['react', 'react-dom']
     },
 
     output: {
         path: path.join(__dirname, "/dist/"),
-        publicPath: 'http://localhost:3001/dist/',
         filename: "bundle.js"
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.optimize.CommonsChunkPlugin('plugins', 'plugins.bundle.js')
+        new webpack.optimize.CommonsChunkPlugin('plugins', 'plugins.bundle.js'),
+        new webpack.optimize.UglifyJsPlugin({minimize: true})
     ],
 
     resolve: {
