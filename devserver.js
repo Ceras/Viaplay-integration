@@ -4,7 +4,7 @@ var webpackDevServer = require('webpack-dev-server');
 var proxy = require('proxy-middleware');
 var url = require('url');
 
-var webpackConf = require('./webpack.config.js');
+var webpackConf = require('./webpack.dev.config.js');
 var app = express();
 
 app.use('/', proxy(url.parse('http://localhost:3001/dist')));

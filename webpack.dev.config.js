@@ -3,13 +3,13 @@ var path = require('path');
 
 module.exports = {
     entry: {
-        app: ['webpack-dev-server/client?http://localhost:3001', 'webpack/hot/dev-server', "./develop/index"],
-        plugins: ['react']
+        app: ['webpack-dev-server/client?http://localhost:3001', 'webpack/hot/dev-server', "./source/index"],
+        plugins: ['react', 'react-dom']
     },
 
     output: {
-        path: path.join(__dirname, "/develop/"),
-        publicPath: 'http://localhost:3001/develop/',
+        path: path.join(__dirname, "/dist/"),
+        publicPath: 'http://localhost:3001/dist/',
         filename: "bundle.js"
     },
     plugins: [
