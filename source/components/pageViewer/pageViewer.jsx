@@ -2,7 +2,7 @@ var React = require("react");
 
 var style = {
     position: "absolute",
-    top: "50px",
+    top: "66px",
     bottom: "50px",
     left: "0",
     width: "100%",
