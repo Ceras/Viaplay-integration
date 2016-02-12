@@ -7,7 +7,7 @@ var Header = require("./components/header/header.jsx"),
 
 var style = {
     height: "100%",
-    width: "100%"
+    width: "auto"
 };
 
 var App = React.createClass({
