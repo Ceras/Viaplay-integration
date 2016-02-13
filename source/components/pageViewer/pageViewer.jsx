@@ -16,7 +16,6 @@ var style = {
 
 module.exports = React.createClass({
     getProductContent: function(){
-        //console.log(this.props.content[0]);
         return this.props.content[0]._embedded["viaplay:product"].content
     },
 
@@ -29,8 +28,6 @@ module.exports = React.createClass({
 
     render: function(){
         var renderedInfo = this.getProductContent() ? (<Info {...this.getProductContent()} />) : ''
-        console.log(this.props.content[0]);
-
 
         return(
             <div style={style}>
