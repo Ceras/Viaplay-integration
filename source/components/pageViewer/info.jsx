@@ -20,9 +20,6 @@ module.exports = React.createClass({
     },
 
     render: function () {
-
-        console.log(this.props);
-
         return (
             <div style={style}>
                 <h1 style={h1Style}>{this.props.title}</h1>
