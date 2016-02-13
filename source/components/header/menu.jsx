@@ -13,7 +13,7 @@ var style = {
 module.exports = React.createClass({
     render: function(){
         var renderedMenuItems = this.props.sections.map(function(section){
-            return (<MenuItem key={section.id} {...section}/>);
+            return (<MenuItem key={section.title} {...section}/>);
         });
 
         return (
