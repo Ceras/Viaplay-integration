@@ -15,7 +15,8 @@ var style = {
 var App = React.createClass({
     getInitialState: function(){
         return {
-            sections: ViaplayStore.getSections()
+            sections: ViaplayStore.sections,
+            content: ViaplayStore.content
         }
     },
 
@@ -30,7 +31,7 @@ var App = React.createClass({
 
     setPageData: function (t) {
         this.setState({
-            sections: ViaplayStore.getSections()
+            sections: ViaplayStore.sections
         })
     },
 
@@ -38,7 +39,7 @@ var App = React.createClass({
         return (
             <div style={style}>
                 <Header sections={this.state.sections}/>
-                <PageViewer/>
+                <PageViewer content={this.state.content} />
                 <Footer/>
             </div>
         )
