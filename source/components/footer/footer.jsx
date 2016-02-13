@@ -67,7 +67,7 @@ module.exports = React.createClass({
         return (
             <div style={style}>
                 <div style={logoContainerStyle}>
-                    <img src="http://assets.viaplay.tv/frontend-010422016021130/images/footer_logo_on_light.png"/>
+                    <img src="http://assets.viaplay.tv/frontend-010422016021130/images/footer_logo_on_dark.png"/>
                 </div>
                 <div style={listContainerStyle}>
                     {renderedList}
