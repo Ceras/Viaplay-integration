@@ -45,7 +45,7 @@ module.exports = React.createClass({
     render: function(){
         return(
             <div style={this.getComponentStyle()} onMouseOver={this.onEnter} onMouseOut={this.onExit}>
-                <a style={this.getLinkStyle()} href={this.props.link}>{this.props.label}</a>
+                <a style={this.getLinkStyle()} href="#">{this.props.title}</a>
             </div>
         )
     }

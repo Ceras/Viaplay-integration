@@ -12,9 +12,10 @@ var style = {
 
 module.exports = React.createClass({
     render: function(){
-        var renderedMenuItems = this.props.menuItems.map(function(menuItem){
-            return (<MenuItem key={menuItem.label} {...menuItem}/>);
+        var renderedMenuItems = this.props.sections.map(function(section){
+            return (<MenuItem key={section.id} {...section}/>);
         });
+
         return (
             <div style={style}>
                 {renderedMenuItems}
