@@ -1,6 +1,7 @@
 var React = require("react");
 
-var Info = require("./info.jsx");
+var Info = require("./info.jsx"),
+    Trailer = require("./trailer.jsx");
 
 var style = {
     position: "absolute",
@@ -9,18 +10,32 @@ var style = {
     left: "0",
     width: "100%",
     background: "#eee",
+    paddingTop: "20px",
     overflowY: "scroll"
 };
 
 module.exports = React.createClass({
     getProductContent: function(){
+        //console.log(this.props.content[0]);
         return this.props.content[0]._embedded["viaplay:product"].content
     },
 
+    getProductImdbId: function () {
+        return this.props.content[0]._embedded["viaplay:product"].content.imdb.id.replace("tt", "");
+    },
+    getProductImageUrl: function(){
+        return this.props.content[0]._embedded["viaplay:product"].content.images.landscape.url
+    },
+
     render: function(){
-        return (
+        var renderedInfo = this.getProductContent() ? (<Info {...this.getProductContent()} />) : ''
+        console.log(this.props.content[0]);
+
+
+        return(
             <div style={style}>
-                <Info {...this.getProductContent()} />
+                <Trailer imageUrl={this.getProductImageUrl()} imdbId={this.getProductImdbId()} />
+                {renderedInfo}
             </div>
         )
     }

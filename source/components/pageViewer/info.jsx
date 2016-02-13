@@ -1,7 +1,8 @@
 var React = require("react");
 
 var style = {
-        width: "50%"
+        width: "50%",
+        float: "right"
     },
     h1Style = {
         margin: "0"

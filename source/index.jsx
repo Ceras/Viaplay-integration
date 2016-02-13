@@ -21,28 +21,34 @@ var App = React.createClass({
     },
 
     componentDidMount: function() {
-        this.unsubscribe = ViaplayStore.listen(function(){
-            console.log("test");
-        });
+        this.unsubscribe = ViaplayStore.listen(this.setPageData);
     },
     componentWillUnmount: function() {
         this.unsubscribe();
     },
 
-    setPageData: function (t) {
+    setPageData: function () {
         this.setState({
-            sections: ViaplayStore.sections
+            sections: ViaplayStore.sections,
+            content: ViaplayStore.content
         })
     },
 
     render: function(){
-        return (
-            <div style={style}>
-                <Header sections={this.state.sections}/>
-                <PageViewer content={this.state.content} />
-                <Footer/>
-            </div>
-        )
+        var renderedPage = (<div></div>);
+
+
+        if(ViaplayStore.pageData){
+            renderedPage = (
+                <div style={style}>
+                    <Header sections={this.state.sections}/>
+                    <PageViewer content={this.state.content} />
+                    <Footer/>
+                </div>
+            )
+        }
+
+        return renderedPage
     }
 });
 
