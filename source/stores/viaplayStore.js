@@ -1,7 +1,7 @@
 var Reflux = require("reflux");
 
 var AppConfig = require("./../appConfig.js"),
-    ViaplayService = require("./../viaplayService.js");
+    RestService = require("./../restService.js");
 
 module.exports = Reflux.createStore({
     pageData: {},
@@ -10,7 +10,7 @@ module.exports = Reflux.createStore({
     content: {},
 
     init: function(){
-        ViaplayService.get(AppConfig.viaplayURL, this.setPageData);
+        RestService.get(AppConfig.viaplayUrl, this.setPageData);
     },
 
     setPageData: function (data) {
@@ -19,7 +19,7 @@ module.exports = Reflux.createStore({
         this.setSections();
         this.setContent();
 
-        this.trigger("test");
+        this.trigger();
     },
 
     setSections: function(){
