@@ -1,7 +1,7 @@
 var Reflux = require("reflux");
 
-var AppConfig = require("../appConfig.js"),
-    ViaplayService = require("../viaplayService.js");
+var AppConfig = require("./../appConfig.js"),
+    ViaplayService = require("./../viaplayService.js");
 
 module.exports = Reflux.createStore({
     pageData: {},
