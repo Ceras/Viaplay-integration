@@ -54,10 +54,10 @@ module.exports = React.createClass({
     render: function(){
         var renderedList = lists.map(function(list){
             var renderedListItems = list.content.map(function(listItem){
-                return (<li style={listItemStyle}><a style={listItemTextStyle} href={listItem.link}>{listItem.label}</a></li>)
+                return (<li key={listItem.label} style={listItemStyle}><a style={listItemTextStyle} href={listItem.link}>{listItem.label}</a></li>)
             });
             return (
-            <div style={{height:"100%"}}>
+            <div key={list.header} style={{height:"100%"}}>
                 <div style={listHeaderStyle}>{list.header}</div>
                 <ul style={listItemContainerStyle}>{renderedListItems}</ul>
             </div>
